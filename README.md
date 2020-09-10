@@ -29,7 +29,7 @@ This is a learning project to understand state management with Redux. State mana
 2. Global Action Dispatching control
 3. Application objects and components property mapping with its state through Reducing functions  
 
-In this application you can find the whole game state is managed from a top container component Tictactoe and decides what actions should go to what component. e.g. the main **action** of this game is **selectingbox** (either O or X by a user) and if once the box is selected other can not undo it. On selection we have to check is it a winning move or not.  So on this action what are states changes:
+In this application you can find the whole game state is managed from a top container component Tictactoe and decides what actions should go to what component. e.g. the main **action** of this game is **selectingbox** (either O or X by a user) and if once the box is selected other can not undo it. On selection we have to check is it a winning move or not.  So on this action what are the states that changes:
 
  -  GAME_STATE => RUNNING| DRAW | WON
  -  CURRENT_USER_STATE  =>  FIRST USER (O) | SECOND USER (X)
@@ -41,7 +41,7 @@ In this application you can find the whole game state is managed from a top cont
  - SESSION => {CURRENT_USER, GAME_ID, GAME_CURRENT_STATE}
 That's all !
 
-Oh! There is always a big challenge for any application that is called - **INITIALIZATION** - means booting/bootstrapping  and we can consider it as another big **action** called **LOAD_GAME** In this application we used a backend memory based API through express server so if you refresh the browser or get back any time later to play the game you can find it exactly where you left it. 
+Oh! There is always a big challenge for any application that is called - **INITIALIZATION** - means booting/bootstrapping  and we can consider it as another big **action** called **LOAD_GAME** In this application I have used a backend memory based API through express server so if you refresh the browser or get back any time later to play the game you can find it exactly where you left it. And you can play multiple games from multiple browsers.
 
  - [ ] **Technology Stack:**
  
