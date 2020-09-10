@@ -34,7 +34,9 @@ In this application you can find the whole game state is managed from a top cont
  -  GAME_STATE => RUNNING| DRAW | WON
  -  CURRENT_USER_STATE  =>  FIRST USER (O) | SECOND USER (X)
  -  WINNER_STATE => FIRST USER (O) | SECOND USER (X) | NONE
+ 
 **So what properties can define these states:**
+
  - BOX => {BOX NO, IS_SELECTED, WHO_SELECTED}
  - SESSION => {CURRENT_USER, GAME_ID, GAME_CURRENT_STATE}
 That's all !
