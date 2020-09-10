@@ -27,7 +27,8 @@ From command line:
 This is a learning project to understand state management with Redux. State management in a large web applications is really a very complex issue, Redux makes it easy by Providing 
 1. State Store
 2. Global Action Dispatching control
-3. Application objects and components property mapping with its state through Reducing functions  
+3. Application objects and components property mapping with its state through Reducing functions
+4. And Middleware for wrapping async calls
 
 In this application you can find the whole game state is managed from a top container component Tictactoe and decides what actions should go to what component. e.g. the main **action** of this game is **selectingbox** (either O or X by a user) and if once the box is selected other can not undo it. On selection we have to check is it a winning move or not.  So on this action what are the states that changes:
 
@@ -50,3 +51,4 @@ Oh! There is always a big challenge for any application that is called - **INITI
 #Nodejs Server (Express)
 #Docker
 #Nginx*
+You can also get from here single composition of multiple dockers.
