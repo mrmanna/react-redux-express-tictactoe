@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import Session from './Session'
 import { connect } from 'react-redux';
 import propTypes from 'prop-types'
-import {fetchLastOrNewGame,startgame,userSelected,resetgame,saveMove,updateState} from '../actions/actions'
-import ReactDOM from "react-dom";
+import {fetchLastOrNewGame,resetgame,saveMove} from '../actions/actions'
 import Box from './Box'
-import {USERS, GAME_STATE} from '../actions/constants'
+import {GAME_STATE} from '../actions/constants'
 class Tictactoe extends Component{
  static propTypes = {
    loadGame:propTypes.func.isRequired,
@@ -20,12 +19,12 @@ class Tictactoe extends Component{
   id:propTypes.string.isRequired
 }
   componentDidMount(){
-    let {loadGame,boxes} = this.props;
+    let {loadGame} = this.props;
     loadGame();
   }
 
 	render(){
-		let {boxes,selectBox,currentUser,gamestate,winner,resetGame,id, updateGame} = this.props;
+		let {boxes,selectBox,currentUser,gamestate,winner,resetGame,id} = this.props;
 		const resetbutton = ()=>resetGame();
     return (<div className="tictactoe-board">
   				<Session user={currentUser} gamestate={gamestate} winner={winner} resetAction={resetbutton}/>

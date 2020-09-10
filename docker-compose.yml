@@ -5,25 +5,32 @@ services:
     build:
       context: ./ui
       dockerfile: dockerfile
+    networks:
+      - backend
     volumes:
-      - '.:/ui'
-      - '/ui/node_modules'
+      - ./ui:/ui
+      - /ui/node_modules
     ports:
-      - '3000:3000'
+      - '80:80'
     environment:
       - NODE_ENV=development
+    links:
+      - api
+    stdin_open: true
+    tty: true  
   api:
     container_name: api
+    restart: always
     build: 
-      context: ./ui
+      context: ./api
       dockerfile: dockerfile
     networks:
       - backend
     ports:
       - '5000:5000'
     volumes:
-      - ./api
-      - '/api/node_modules'
+      - ./api:/api
+      - /api/node_modules
 networks:
   backend:
     driver: bridge

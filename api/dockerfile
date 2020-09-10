@@ -1,8 +1,12 @@
 # build environment
 FROM node:14.7.0-alpine as build
-# install and cache app dependencies
-COPY package.json package-lock.json ./
-RUN mkdir /api && mv ./node_modules ./api
 WORKDIR /api
-COPY . ./
+ENV PATH /api/node_modules/.bin:$PATH
+COPY package*.json ./api/
+RUN npm install --silent
+RUN npm install nodemon --silent
+RUN npm install express --silent
+COPY . ./api/
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
 CMD ["npm", "run", "start"]

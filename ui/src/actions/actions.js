@@ -1,11 +1,10 @@
-import React from 'react';
 import { API,API_START, API_END, ACCESS_DENIED, API_ERROR,LAST_OR_NEW_GAME_CALL,NEW_LAST_GAME }  from './constants'
 
 export function fetchLastOrNewGame() {
   let id = localStorage.getItem("gameId");
   id = (null===id)?0:id;
   return apiAction({
-    url: "/api/newOrLastgame?id="+id,
+    url: "http://localhost/api/newOrLastgame?id="+id,
     onSuccess: startgame,
     onFailure: () => console.log("Error occured loading game"),
     label: LAST_OR_NEW_GAME_CALL

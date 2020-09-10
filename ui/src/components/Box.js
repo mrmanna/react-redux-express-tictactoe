@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle,faTimesCircle} from '@fortawesome/free-regular-svg-icons'
 import propTypes from 'prop-types'
-import {userSelected} from '../actions/actions'
-import { connect } from 'react-redux';
 import {USERS} from '../actions/constants'
 
  export default class Box extends Component{
@@ -18,7 +16,7 @@ import {USERS} from '../actions/constants'
     gameId:propTypes.string.isRequired
 	}
   render(){
-  let { gameId, index, selected,selectAction, user } = this.props;
+  let {index, selected,selectAction, user } = this.props;
 
           return (<div id={index} onClick={selectAction}>           
 	           <span className={ (selected)?'':'hideSelection'}> 

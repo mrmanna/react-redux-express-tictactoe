@@ -1,7 +1,6 @@
 import React from 'react';
 import Box from '../components/Box'
-import { USERS,GAME_STATE,API,API_START, API_END, ACCESS_DENIED, API_ERROR,LAST_OR_NEW_GAME_CALL,NEW_LAST_GAME }  from '../actions/constants'
-import {fetchLastOrNewGame} from '../actions/actions'
+import { USERS,GAME_STATE,API_START, API_END, LAST_OR_NEW_GAME_CALL,NEW_LAST_GAME }  from '../actions/constants'
 
 
 const elems = [];
