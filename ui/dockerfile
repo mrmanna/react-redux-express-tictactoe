@@ -1,0 +1,8 @@
+# build environment
+FROM node:14.7.0-alpine as build
+# install and cache app dependencies
+COPY package.json package-lock.json ./
+RUN npm install --only=prod&&npm install react-scripts@3.4.3 &&  mkdir /ui && mv ./node_modules ./ui
+WORKDIR /ui
+COPY . ./
+CMD ["yarn", "start"]

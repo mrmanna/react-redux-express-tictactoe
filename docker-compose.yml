@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  ui:
+    container_name: ui
+    build:
+      context: ./ui
+      dockerfile: dockerfile
+    volumes:
+      - '.:/ui'
+      - '/ui/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+  api:
+    container_name: api
+    build: 
+      context: ./ui
+      dockerfile: dockerfile
+    networks:
+      - backend
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./api
+      - '/api/node_modules'
+networks:
+  backend:
+    driver: bridge
