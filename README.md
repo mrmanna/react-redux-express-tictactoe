@@ -21,7 +21,27 @@ From command line:
 
 
     TODO: Test cases
-
+ 
+ - [ ] **Test Cases :: need to be tested**
+ 1. **Action creators** 
+ *(expect correct action is returned or not):* 
+  1.1. UserSelected 
+  1.2. StartGame
+  1.3  ResetGame
+ 2. **Async Action creators**, along with middleware and store
+ *(expect fetching http request correctly):* 
+  2.1. FetchNewOrLastGame
+  2.2. SaveMove 
+  3. **Reducers** 
+ *( expect correct state returned according to action types)* 
+  3.1. This game has only one Reducer named *BoxReducer* with three cases 
+  4. **Components**
+  *(expect callbacks works properly)*
+   4.1 BoxComponent::onClick
+   5. **Connect**
+        *(expect state inject worked)*
+       5.1. *Tictactoe* a container Component 
+       
  - [ ] **Notes**
 
 This is a learning project to understand state management with Redux. State management in a large web applications is really a very complex issue, Redux makes it easy by Providing 
